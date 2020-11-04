@@ -36,42 +36,15 @@ class MainActivity : AppCompatActivity() {
                 R.color.red)
 
 
-
-
-
-
-
-
-
  val adpter=ViewpagerAdpter(colors)
     tabViewPager.adapter=adpter
 
 
-
-
-
-
         TabLayoutMediator(tabLayout, tabViewPager){tab,postion->
 
-            tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
+// change icons
 
-                override fun onTabSelected(p0: TabLayout.Tab?) {
-                    Log.d(postion.toString(),"a")
-
-                    Toast.makeText(this@MainActivity,tab.text.toString(),Toast.LENGTH_LONG).show()
-                }
-
-                override fun onTabUnselected(p0: TabLayout.Tab?) {
-
-                }
-
-                override fun onTabReselected(p0: TabLayout.Tab?) {
-
-                }
-
-
-            })
             tab.icon=when(postion){
 
                 0 -> ContextCompat.getDrawable(this,R.drawable.ic_profile)
@@ -79,6 +52,9 @@ class MainActivity : AppCompatActivity() {
                 2 -> ContextCompat.getDrawable(this,R.drawable.ic_call)
                 else ->  ContextCompat.getDrawable(this,R.drawable.ic_profile)
             }
+
+            // Tab text
+
             tab.text=when(postion){
 
 
@@ -90,7 +66,18 @@ class MainActivity : AppCompatActivity() {
         }.attach()
 
 
+        // paget listenr
+
+        tabViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+             override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                 Toast.makeText(this@MainActivity,position.toString(),Toast.LENGTH_LONG).show()
+            }
+            }
+        )
     }
+
+
 
 
 }

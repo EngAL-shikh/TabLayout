@@ -23,7 +23,6 @@ class ViewpagerAdpter(val colors:List<Int>):RecyclerView.Adapter<ViewpagerAdpter
         val view=LayoutInflater.from(parent.context).inflate(R.layout.continar,parent,false)
 
 
-
         return  ViewPagerViewHolder(view)
 
     }
