@@ -58,14 +58,8 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onTabSelected(p0: TabLayout.Tab?) {
                     Log.d(postion.toString(),"a")
-                    var text= when(postion){
-                        0 -> "profile"
-                        1 -> "chat"
-                        2 -> "call"
-                        else-> ""
 
-                    }
-                    Toast.makeText(this@MainActivity,text.toString(),Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity,tab.text.toString(),Toast.LENGTH_LONG).show()
                 }
 
                 override fun onTabUnselected(p0: TabLayout.Tab?) {
