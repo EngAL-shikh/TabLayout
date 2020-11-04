@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
  val adpter=ViewpagerAdpter(colors)
     tabViewPager.adapter=adpter
 
+        //PagerTransfor
+
+        //tabViewPager.setPageTransformer(ZoomOutSlideTransformer)
+
 
         TabLayoutMediator(tabLayout, tabViewPager){tab,postion->
 
